@@ -1,0 +1,152 @@
+.nav-bar {
+    overflow: hidden;
+    text-align: right;
+    display: inline;
+    margin-left: 600px;
+    color:rgba(137, 220, 220, 1);
+    font-size:25px;
+}
+.nav-bar a i{
+    margin-right:2px;
+}
+
+.company-name {
+    display: inline-block;
+    color:white;
+    font-size: 30px;
+    text-align: left;
+    padding-right:10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    background:linear-gradient(rgba(109, 248, 248, 1), rgba(109, 179, 248, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-bar-links {
+    text-decoration: none;
+    color: inherit;
+    display: inline;
+    padding-right: 20px;
+    font-size: 15px;
+    font-family: verdana;
+    text-decoration-color: black;
+    text-decoration-style: solid;
+}
+
+.sticky {
+    position: fixed;
+}
+
+.white-background {
+    background:#A4ACB2;
+    height: 90px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+}
+
+.dropdown {
+    display: inline
+}
+
+.dropdown:hover .sub-menu {
+    display: inline-block;
+    position: absolute;
+    text-align: right;
+    background-color:inherit;
+    margin: none;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+    text-align: right;
+}
+
+.sub-menu ul li {
+    border: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    font-size:20px;
+}
+
+.last-child {
+    border-bottom: none;
+    text-align: left;
+}
+
+body{
+    background:rgba(218, 139, 139, 1);
+    background-size:cover;
+    animation:color-change 10s ease infinite;
+}
+.middle {
+    text-align:center;
+    color:black;
+    border-right:2px solid black;
+    
+}
+.typewriter{
+margin-left:400px;
+font-family:monospace;
+border-right:2px solid black;
+animation:typing 5s steps(18) infinite, blink 1s step-end infinite;
+white-space:nowrap;
+overflow:hidden;
+
+
+}
+@keyframes typing {
+0% {width:0}
+30% {width:18ch; }
+80%{width:18ch; }
+90%{width:0ch; }
+100%{width:0ch; }
+
+}
+@keyframes blink {
+0% {border-right:2px solid rgba(0,0,0,0)}
+50% {border-right:2px solid rgba(0,0,0,.5)}
+100% {border-right:2px solid rgba(0,0,0,1)}
+}
+.company {
+margin-top:100px;
+margin-bottom:30px;
+font-size:2.5em;
+font-weight:200;
+color:white;
+border:1px solid white;
+padding-bottom:10px;
+padding-left:10px;
+padding-right:10px;
+padding-top:10px;
+display:inline-block;
+}
+.message {
+margin-top:70px;
+margin-left:520px;
+color:white;
+font-size:35px;
+
+}
+@keyframes color-change{
+0% {background-color:#6978C9;}
+50% {background-color:#FFB9AE}
+100% {background-color:#48B5CF}
+}
+.break-line {
+width:370px;
+margin-left:500px;
+margin-top:20px;
+border-top:1px solid white;
+}
