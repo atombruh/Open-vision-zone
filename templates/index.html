@@ -5,29 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/237865f5a2.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <title>Home</title>
+    <title>{%block title %}Home{% endblock %}</title>
 
     <style>
         .nav-bar {
             overflow: hidden;
             text-align: right;
             display: inline;
-            padding-left: 600px;
+            margin-left: 600px;
+            color:rgba(137, 220, 220, 1);
+            font-size:25px;
         }
-        
+        .nav-bar a i{
+            margin-right:2px;
+        }
+    
         .company-name {
             display: inline-block;
-            font-size: 20px;
-            padding-bottom: 2px;
+            color:white;
+            font-size: 30px;
             text-align: left;
-            padding-left: 25px;
-            margin-top: 15px;
+            padding-right:10px;
+            padding-left: 10px;
+            margin-top: 10px;
+            background:linear-gradient(rgba(109, 248, 248, 1), rgba(109, 179, 248, 1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         a {
@@ -51,11 +61,10 @@
         }
         
         .white-background {
-            background: black;
-            height: 100px;
-            color: white;
-            padding-top: 20px;
-            padding-bottom: 20px;
+            background:#A4ACB2;
+            height: 90px;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
         
         .sub-menu {
@@ -71,7 +80,7 @@
             display: inline-block;
             position: absolute;
             text-align: right;
-            background-color: #454545;
+            background-color:inherit;
             margin: none;
         }
         
@@ -85,6 +94,7 @@
             border: 1px solid black;
             border-bottom: 1px solid black;
             padding: 10px;
+            font-size:20px;
         }
         
         .last-child {
@@ -92,39 +102,100 @@
             text-align: left;
         }
         
-        body {
-            background: url('https://s8.gifyu.com/images/scan.gif');
-            background-repeat: no-repeat;
-            background-position: center 100px;
-            background-color: none;
+        body{
+            background:rgba(218, 139, 139, 1);
+            background-size:cover;
+            animation:color-change 10s ease infinite;
         }
+        .middle {
+            text-align:center;
+            color:black;
+            border-right:2px solid black;
+            
+        }
+        .typewriter{
+        margin-left:400px;
+        font-family:monospace;
+        border-right:2px solid black;
+        animation:typing 5s steps(18) infinite, blink 1s step-end infinite;
+        white-space:nowrap;
+        overflow:hidden;
+    
+        
+    }
+    @keyframes typing {
+        0% {width:0}
+        30% {width:18ch; }
+        80%{width:18ch; }
+        90%{width:0ch; }
+        100%{width:0ch; }
+
+    }
+    @keyframes blink {
+       0% {border-right:2px solid rgba(0,0,0,0)}
+       50% {border-right:2px solid rgba(0,0,0,.5)}
+       100% {border-right:2px solid rgba(0,0,0,1)}
+    }
+    .company {
+        margin-top:100px;
+        margin-bottom:30px;
+        font-size:2.5em;
+        font-weight:200;
+        color:white;
+        border:1px solid white;
+        padding-bottom:10px;
+        padding-left:10px;
+        padding-right:10px;
+        padding-top:10px;
+        display:inline-block;
+    }
+    .message {
+        margin-top:70px;
+        margin-left:520px;
+        color:white;
+        font-size:35px;
+        
+    }
+    @keyframes color-change{
+        0% {background-color:#6978C9;}
+        50% {background-color:#FFB9AE}
+        100% {background-color:#48B5CF}
+    }
+    .break-line {
+        width:370px;
+        margin-left:500px;
+        margin-top:20px;
+        border-top:1px solid white;
+    }
+        
+    
     </style>
+<div class="white-background">
+    <a href="/home" class="company-name">OPEN VISION</a>
+    <div class="nav-bar">
+        <a href="/home" class="nav-bar-links"><i class="fa fa-house" style="font-size:24px;"></i>Home</a> {% if current_user.id == 1 %}
+        <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="font-size:24px;"></i></i>Dashboard</a> {% else %}
+        <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="font-size:24px;"></i></i>Attendance</a> {%endif%}
+        <a href="/contact" class="nav-bar-links"><i class="fa  fa-phone"style="font-size:24px;"></i>Contact</a>
+        <a href="/about" class="nav-bar-links"><i class="fa fa-info"style="font-size:24px;"></i>About</a>
+        <div class="dropdown">
+            <a href="/login"><i class='fa fa-user' id="menu" ></i></a>
+            <div class="sub-menu">
+                <ul>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Register</a></li>
+                    <li class="last-child"><a href="/logout">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 </head>
 
 <body>
 
 
-    <div class="white-background">
-        <a href="/home" class="company-name"><img src="https://i.ibb.co/HrPwhKr/logo.png" alt="logo" width="200px;"></a>
-        <div class="nav-bar">
-            <a href="/home" class="nav-bar-links"><i class="fa fa-home" style="color:white;;font-size:24px;"></i>Home</a> {% if current_user.id == 1 %}
-            <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="color:white;font-size:24px;"></i></i>Dashboard</a> {% else %}
-            <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="color:white;font-size:24px;"></i></i>Attendance</a> {%endif%}
-
-            <a href="/contact" class="nav-bar-links"><i class="fa  fa-phone" style="color:white;font-size:24px;"></i>Contact</a>
-            <a href="/about" class="nav-bar-links"><i class="fa fa-info" style="color:white;font-size:24px;"></i>About</a>
-            <div class="dropdown">
-                <a href="/login"><i class='fa fa-user' id="menu" style='color:white;font-size:30px;margin-left:30px;'></i></a>
-                <div class="sub-menu">
-                    <ul>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/signup">Register</a></li>
-                        <li class="last-child"><a href="/logout">Log Out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     {% for message in get_flashed_messages()%}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{message}}</strong>
@@ -133,13 +204,16 @@
     </div>
     {%endfor%}
 
+    <div class="middle">
+        <h1 class="company">OPEN VISION ZONE</h1>
+        <hr class="break-line">
+        <h1 class="typewriter message">Shaping The Future</h1>
+    </div>
 
 
 
 
-
-
-
+    
     <script>
         window.onscroll = function() {
             myFunction()
@@ -157,3 +231,6 @@
         }
     </script>
 </body>
+
+
+

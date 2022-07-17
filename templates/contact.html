@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <title>{%block title %}Home{% endblock %}</title>
+    <title>{%block title %}Contact Us{% endblock %}</title>
 
     <style>
         .nav-bar {
@@ -93,28 +93,26 @@
         }
         
         body {
-            background: url('https://s8.gifyu.com/images/scan.gif');
+            background:url('https://i.ibb.co/bXnr10g/contactbackground.jpg');
             background-repeat: no-repeat;
-            background-position: center 100px;
-            background-color: none;
+            background-position: right 101px;
+            background-color:#F1F1F1;
+            background-size:70%;
+            height:100%;
         }
-        .typewriter{ 
-        font-family:monospace;
-        animation:typing 4s steps(5) infinite;
-        white-space:nowrap;
-        overflow:hidden;
+        .contact{
+            text-align:center;
+            margin-top:50px;
         
-    }
-    @keyframes typing {
-        0% {width:0}
-        30% {width:5ch; }
-        80%{width:5ch; }
-        90%{width:0ch; }
-        100%{width:0ch; }
-
-    }
-        
-        
+        }
+        .contact-message{
+            margin-top:20px;
+            
+        }
+        .contacter-info input{
+            margin-right:10px;
+            border-radius:30px;
+        }
     </style>
 
 </head>
@@ -155,7 +153,14 @@
 
 
 
-
+    <div class="contact">
+        <form action="https://formsubmit.co/atomlegion10@gmail.com" method="POST">
+            <div class="contacter-info"><input type="text" name="name" required>
+                <input type="email" name="email" required></div>
+            <div class="contact-message"><textarea placeholder="Message"  rows=3 required cols=53></textarea></div>
+            <button type="submit">Submit</button>
+       </form>
+    </div>
 
     
     <script>
@@ -175,4 +180,5 @@
         }
     </script>
 </body>
+
 

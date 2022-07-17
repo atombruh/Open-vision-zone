@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/237865f5a2.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
@@ -18,16 +19,32 @@
             overflow: hidden;
             text-align: right;
             display: inline;
-            padding-left: 600px;
+            margin-left: 600px;
+            color:rgba(137, 220, 220, 1);
+            font-size:25px;
         }
-        
+        .nav-bar a i{
+            margin-right:2px;
+        }
+    
         .company-name {
-            display: inline;
-            margin-top: 15px;
+            display: inline-block;
+            color:white;
+            font-size: 30px;
             text-align: left;
-            padding-left: 25px;
+            padding-right:10px;
+            padding-left: 10px;
+            margin-top: 10px;
+            background:linear-gradient(rgba(109, 248, 248, 1), rgba(109, 179, 248, 1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
+        .white-background {
+            background:#A4ACB2;
+            height: 90px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
         a {
             text-decoration: none;
             color: inherit;
@@ -48,14 +65,6 @@
             position: fixed;
         }
         
-        .white-background {
-            background: #454545;
-            color: white;
-            height: 90px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            margin-top: none;
-        }
         
         .sub-menu {
             display: none;
@@ -131,29 +140,35 @@
             cursor: pointer;
         }
         
-        body {
-            background: url("https://i.ibb.co/30hhPHh/background.jpg");
-            background-color: black;
+        body{
+            background:rgba(218, 139, 139, 1);
+            background-size:cover;
+            animation:color-change 10s ease infinite;
         }
+        @keyframes color-change{
+        0% {background-color:#6978C9;}
+        50% {background-color:#FFB9AE}
+        100% {background-color:#48B5CF}
+    }
     </style>
 </head>
 
 <body>
     <div class="white-background">
-        <a href="/home" class="company-name"><img src="https://i.ibb.co/HrPwhKr/logo.png" alt="logo" width="200px;"></a>
+        <a href="/home" class="company-name">OPEN VISION</a>
         <div class="nav-bar">
-            <a href="/home" class="nav-bar-links"><i class="fa fa-home" style="color:black;font-size:24px;"></i> Home</a> {% if current_user.id == 1%}
-            <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="color:black;font-size:24px;"></i></i>Dashboard</a> {% else%}
-            <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="color:black;font-size:24px;"></i></i>Attendance</a> {%endif%}
-            <a href="/contact" class="nav-bar-links"><i class="fa  fa-phone" style="color:black;font-size:24px;"></i> Contact</a>
-            <a href="/about" class="nav-bar-links"><i class="fa fa-info" style="color:black;font-size:24px;"></i> About</a>
+            <a href="/home" class="nav-bar-links"><i class="fa fa-house" style="font-size:24px;"></i>Home</a> {% if current_user.id == 1 %}
+            <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="font-size:24px;"></i></i>Dashboard</a> {% else %}
+            <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="font-size:24px;"></i></i>Attendance</a> {%endif%}
+            <a href="/contact" class="nav-bar-links"><i class="fa  fa-phone"style="font-size:24px;"></i>Contact</a>
+            <a href="/about" class="nav-bar-links"><i class="fa fa-info"style="font-size:24px;"></i>About</a>
             <div class="dropdown">
-                <a href="/login"><i class='fa fa-user' id="menu" style='color:black;font-size:24px;'></i></a>
+                <a href="/login"><i class='fa fa-user' id="menu" ></i></a>
                 <div class="sub-menu">
                     <ul>
                         <li><a href="/login">Login</a></li>
                         <li><a href="/signup">Register</a></li>
-                        <li><a href="/logout" class="last-child">Log Out</a></li>
+                        <li class="last-child"><a href="/logout">Log Out</a></li>
                     </ul>
 
 

@@ -95,7 +95,7 @@ def about():
 @login_required
 def dashboard():
     if current_user.is_authenticated:
-        if current_user.id == 1:
+        if current_user.id != 1:
             return render_template('attendance.html')
         else:
             return render_template('dashboard.html')
@@ -145,6 +145,12 @@ def signup():
         else:
             flash('User Already registered')
     return render_template('signup.html',form=form)
+
+
+@app.route('/contact',methods=['GET','POST'])
+def contact():
+    return render_template('contact.html')
+    
 
 @app.errorhandler(404)
 def page_not_found(e):
