@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>About</title>
+    
+    <style>
+        i{
+            color:white;
+        }
+        .nav-bar{
+            overflow:hidden;
+            text-align:right;
+            display:inline;
+            padding-left:600px;
+            
+            
+               
+        }
+        .company-name {
+            display:inline-block;
+            font-size:20px;
+            padding-bottom:1px;
+            text-align:left;
+            padding-left:25px;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+            
+        .nav-bar-links {
+            text-decoration:none;
+            color:inherit;
+            display:inline;
+            padding-right: 20px;
+            font-size:15px;
+            font-family:verdana;
+            text-decoration-color:black;
+            text-decoration-style:solid;
+            
+            
+            
+        }  
+        
+    
+        .sticky {
+            position:fixed;
+        }
+        .white-background {
+            background :black;
+            color:white;
+            height:80px;
+            padding-bottom:10px;
+
+        }
+        .background-overlay {
+            background-color:black;
+        }
+        .sub-menu{
+            display:none;
+            position:absolute;
+            background-color:white;
+        }
+        .dropdown{
+            display:inline
+        }
+        .dropdown:hover .sub-menu {
+            display:inline-block;
+            position:absolute;
+            text-align:right;
+        }
+        .sub-menu ul{
+            list-style-type:none;
+            padding-left:0px;
+            text-align:right;
+        
+        }
+        .sub-menu ul li{
+            border:1px solid black;
+            
+            border-bottom:1px solid black;
+            padding:10px;
+        }
+        .sub-menu ul li .last-child{
+            border-bottom:none;
+        }
+        
+
+        body {
+            background:url('')
+        }
+        .heading {
+            text-align:center;
+            font-weight:lighter;
+            font-family:Helvetica;
+        }
+        
+        .paragraph {
+            font-size:20px;
+            font-weight:lighter;
+
+        }
+        .services {
+            font-size:18px;
+        }
+        .About{
+            border:1px solid white;
+            color:white;
+            display:inline-block;
+
+            
+        }
+        
+        body {
+            background-color:black;
+
+        }
+        .nav-bar ul li{
+            color:white;
+            background-color: gray;
+        }
+        
+
+    
+
+    </style>
+</head>
+<body>
+    <div class="white-background">
+    <a href="/home" class="company-name" ><img src="https://i.ibb.co/HrPwhKr/logo.png" alt="logo" width="200px;"></a>
+   <div class="nav-bar">
+        <a href="/home" class="nav-bar-links"><i class="fa fa-home" style="font-size:24px;"></i>Home</a>
+        {% if current_user.id == 1%}
+        <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="color:white;font-size:24px;"></i></i>Dashboard</a>
+        {% else%}
+        <a href="/dashboard" class="nav-bar-links"><i class="fa fa-graduation-cap" style="color:white;font-size:24px;"></i></i>Attendance</a>
+        {%endif%}
+        <a href="/contact" class="nav-bar-links"><i class="fa  fa-phone" style="font-size:24px;"></i>Contact</a>
+        <a href="/about" class="nav-bar-links"><i class="fa fa-info" style="font-size:24px;"></i>About</a>
+        <div class="dropdown">
+        <a href="/login"><i class='fa fa-user' id="menu" style='color: white;font-size:24px;margin-left:10px;'></i></a>
+        <div class="sub-menu">
+        <ul>
+        <li><a href="/login" >Login</a></li>
+        <li><a href="/signup">Sign-Up</a></li>
+        <li><a href="/logout" class="last-child">Log Out</a></li>
+        </ul>
+        
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="About">
+        <h1 class="heading">About Us</h1>
+        <p class="paragraph">Open Vision is basically a project that was given to us by our teacher.<br> It basically is a webpage to manage attendance using facial recognition.<br>The features Include:</p>
+        <ul class="services">
+            <li >Attendance Using face recognition</li>
+            <li>Adding Students</li>
+            <li>Viewing Attendance Statstics</li>
+        </ul>
+    </div>
+    <img src="https://i.ibb.co/TWfmqcy/about-img.jpg" alt="About" width="520px" height="370px" style="padding-top:30px;padding-left:70px;">   
+
+    
+    
+    <h3 style="color:white;text-align:center;">Short Video On our Project</h3>
+    <iframe src="https://streamable.com/e/6wzz58" title="Our Experience"  width="1500px" height="280px" allowfullscreen></iframe>
+
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var navbar = document.getElementsByClassName("nav-bar");
+            var sticky = navbar.offsetTop;
+            
+            function myFunction() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+              } else {
+                navbar.classList.remove("sticky");
+              }
+            }
+            </script>
+        </body>
