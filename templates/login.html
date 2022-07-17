@@ -79,6 +79,8 @@
             display: inline-block;
             position: absolute;
             text-align: right;
+            background-color:inherit;
+            margin:none;
         }
         
         ul {
@@ -91,65 +93,91 @@
             border: 1px solid black;
             border-bottom: 1px solid black;
             padding: 10px;
+            font-size:20px;
         }
         
         .sub-menu ul li .last-child {
             border-bottom: none;
         }
         
-        body {
-            background-color: #D3D3D3;
-        }
+        
         
         .log-in-form {
-            background-color: white;
-            height: 350px;
-            width: 530px;
-            padding-top: 20px;
+            border:1px solid black;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            background:#262526;
+            height: 470px;
+            width: 950px;
+            padding-top: 10px;
             padding-bottom: 5px;
             padding-left: 5px;
-            margin-left: 50px;
-            margin-top: 50px;
+            margin:0 auto;
+            margin-top: 30px;
+
+            
+            
         }
-        
+        .log-in-form i{
+           margin-left:190px;
+            margin-bottom:30px;
+            margin-top:70px;
+            
+        }
         .log-in-form input {
-            display: block;
+            display: inline;
             padding-bottom: 3px;
-            width: 500px;
+            width: 400px;
             height: 40px;
             margin-bottom: 20px;
             margin-left: 10px;
-            border-radius: 2px;
+            border-radius:3%;
             border: 1px solid #E1D9D1;
             margin-top: 5px;
+            background:inherit;
         }
         
-        .log-in-form input::placeholder {
-            padding-left: 10px;
-        }
+        
         
         .submit-button {
-            border: 1px solid gray;
             color: white;
-            background-color: gray;
+            font-weight: 200;
+            font-size:20px;
+            background-color: #1B8FFF;
             padding: 7px 7px 7px 7px;
             margin-left: 10px;
-            margin-top: 7px;
+            margin-top: 20px;
             border-radius: 3px;
             text-align: center;
             cursor: pointer;
         }
         
         body{
-            background:rgba(218, 139, 139, 1);
+            background:#838E97;
             background-size:cover;
-            animation:color-change 10s ease infinite;
+            animation:color-change 15s ease infinite;
         }
         @keyframes color-change{
-        0% {background-color:#6978C9;}
-        50% {background-color:#FFB9AE}
-        100% {background-color:#48B5CF}
+        0% {background:linear-gradient(rgba(211, 187, 187, 1), rgba(211, 199, 187, 1));}
+        50% {background:linear-gradient(rgba(199, 206, 192, 1), rgba(192, 206, 192, 1))}
+        100% {background:linear-gradient(rgba(186, 212, 199, 1), rgba(186, 212, 212, 1))}
     }
+        .image {
+            float:left;
+            margin-right:70px;
+            padding-top:20px;
+        }
+        .company {
+margin-top:30px;
+margin-bottom:50px;
+font-size:2.1em;
+font-weight:200;
+color:white;
+
+display:inline-block;
+text-align:center;
+margin-left:140px;
+}
+        
     </style>
 </head>
 
@@ -186,12 +214,11 @@
     {%endfor%}
 
     <div class="log-in-form">
-        <h1 style="padding-left:50px;font-weight:lighter;text-align:center;margin-top:1px;margin-bottom:15px;">Log In</h1>
-        <br>
         <form method="POST">
-            {{form.hidden_tag()}} {{form.email}} {{form.password_hash}}
-            <br> {{form.submit(class="submit-button")}}
-
+            <img src="https://i.ibb.co/9yMV34N/signup.png" alt="signup" class="image">
+            <div><h2 class="company">Login</h1>
+                {{form.hidden_tag()}} {{form.email}} {{form.password_hash}}
+                <br> {{form.submit(class="submit-button")}}</div>
         </form>
     </div>
     <script>
